@@ -24,7 +24,7 @@ Windows default data location and explicit text encoding.
 These checks cover the server and native CLI integration. Desktop GUI installation,
 individual third-party MCP hosts and publication in OpenAI's directory remain
 UNVERIFIED. A scripted demonstration does not establish autonomous-agent reasoning
-quality, customer usefulness, comparative advantage, model cost or latency.
+quality, user usefulness, comparative advantage, model cost or latency.
 
 The historical `scripts/review.py` launcher is a separate integration with source
 bindings and model authentication. The CI reviewer-access checks exercise the MCP

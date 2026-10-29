@@ -211,7 +211,7 @@ class WorkingModel:
             opposition = sorted([*negative.values(), *([max(counterpriors.values())] if counterpriors and not positive else [])], reverse=True)
             net = [support.count(tier)-opposition.count(tier) for tier in (3, 2, 1)]
             balance = next((v for v in net if v), 0)
-            # A surviving amount/other clue cannot silently replace a logical
+            # A surviving measurement/other clue cannot silently replace a logical
             # premise that made the inference valid. The analyst must revisit it.
             if blocked and balance > 0:
                 balance = 0

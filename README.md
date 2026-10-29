@@ -43,7 +43,7 @@ graph on every run. It does not exercise autonomous model reasoning.
 
 This fixture checks software behaviour, not comparative research quality.
 The command prints the output folder. Open its `walkthrough.md`, `snapshots.json`,
-`model.json` and `trace.json`. See [the example and agent prompt](examples/quickstart/README.md).
+`model.json` and `trace.json`. See [the technical example](examples/quickstart/README.md).
 
 ## Use with Codex
 

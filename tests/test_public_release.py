@@ -20,7 +20,7 @@ def module(name, path):
 
 
 class PublicReleaseTests(unittest.TestCase):
-    def test_archive_allowlist_excludes_local_graph_env_and_customer_artifacts(self):
+    def test_archive_allowlist_excludes_local_graph_env_and_private_artifacts(self):
         package = module("package_release", ROOT / "scripts/package_release.py")
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
