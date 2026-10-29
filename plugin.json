@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "assumption-research-verification",
+  "version": "0.4.2",
+  "description": "Build a working model from observations, hypotheses and counterfacts, with an inspectable evidence graph.",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "hypotheses",
+    "evidence",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "ARV",
+        "shortDescription": "Research with an evidence graph",
+        "longDescription": "Keep observations, assumptions and hypotheses distinct. Accumulate new grounds, revisit contradictions and save an inspectable working model.",
+        "category": "Productivity",
+        "brandColor": "#176B59",
+        "logo": "./assets/icon.svg",
+        "composerIcon": "./assets/icon.svg",
+        "defaultPrompt": [
+          "Use ARV to build a working model from these documents and explain the evidence behind each conclusion."
+        ]
+      }
+    }
+  },
+  "repository": "https://github.com/raven-ai-esh/arv",
+  "homepage": "https://github.com/raven-ai-esh/arv",
+  "author": {
+    "name": "raven-ai-esh",
+    "url": "https://github.com/raven-ai-esh"
+  }
+}

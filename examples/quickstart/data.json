@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "dataset": "Field recording",
+  "scope": "synthetic:quickstart",
+  "observations": [
+    {
+      "key": "channels:A",
+      "content": "Channel A records a recurring pulse. Учебное наблюдение.",
+      "origin_id": "synthetic:channel:A",
+      "locator": "pulse/20",
+      "valid_at": "2026-01-10"
+    },
+    {
+      "key": "channels:B",
+      "content": "Independent channel B records a matching recurring pulse.",
+      "origin_id": "synthetic:channel:B",
+      "locator": "pulse/20",
+      "valid_at": "2026-01-10"
+    },
+    {
+      "key": "rod:raw",
+      "content": "Rod R-7 has a raw length reading of 7 U. The demonstration slot is 10 cm wide.",
+      "origin_id": "synthetic:rod-reading",
+      "locator": "R-7/raw",
+      "valid_at": "2026-01-11"
+    },
+    {
+      "key": "rod:calibrated",
+      "content": "The calibration record states U=2 cm for this recording, so R-7 is 14 cm long and cannot fit a 10 cm slot.",
+      "origin_id": "synthetic:calibration",
+      "locator": "R-7/scale",
+      "valid_at": "2026-01-12"
+    }
+  ],
+  "demo_rule": "For this synthetic task, initially interpret U as one centimetre unless a calibration record supplies a different scale."
+}

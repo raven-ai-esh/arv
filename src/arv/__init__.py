@@ -1,0 +1,1 @@
+"""Assumption–Research–Verification graph."""

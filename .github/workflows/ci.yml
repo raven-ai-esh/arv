@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-release:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.9.27"
+          enable-cache: false
+      - name: Install Python and locked dependencies
+        run: uv sync --frozen
+      - name: Fresh archive, multilingual paths, repeated demo and full tests
+        run: uv run --frozen --offline python scripts/check_release.py --output ci-receipts/portable
+      - name: Install the native Codex client for the host check
+        run: npm install --prefix .ci-tools "@openai/codex@0.153.2"
+      - name: Native plugin installation and real MCP effects without a model call
+        run: uv run --frozen --offline python scripts/check_native.py --codex-js .ci-tools/node_modules/@openai/codex/bin/codex.js --output ci-receipts/native
+      - name: Retain synthetic acceptance receipts
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: acceptance-${{ matrix.os }}
+          retention-days: 7
+          path: |
+            ci-receipts/portable/*.stdout
+            ci-receipts/portable/*.stderr
+            ci-receipts/portable/steps.json
+            ci-receipts/portable/receipt.json
+            ci-receipts/native/*.stdout
+            ci-receipts/native/*.stderr
+            ci-receipts/native/receipt.json
+            ci-receipts/native/inventory.json

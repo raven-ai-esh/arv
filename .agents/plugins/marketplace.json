@@ -1,0 +1,12 @@
+{
+  "name": "arv-public",
+  "interface": {"displayName": "ARV"},
+  "plugins": [
+    {
+      "name": "assumption-research-verification",
+      "source": {"source": "local", "path": "./"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity"
+    }
+  ]
+}

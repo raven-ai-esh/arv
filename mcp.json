@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "arv": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--frozen", "--offline", "--project", "${PLUGIN_ROOT}", "python", "${PLUGIN_ROOT}/scripts/arv.py"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

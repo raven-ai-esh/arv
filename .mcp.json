@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "arv": {
+      "command": "uv",
+      "args": ["run", "--frozen", "--offline", "--project", ".", "python", "scripts/arv.py"],
+      "cwd": "."
+    }
+  }
+}
