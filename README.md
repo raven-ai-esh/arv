@@ -16,6 +16,8 @@ when a premise changes.
 Observation → hypothesis → new grounds or counterfacts → revised working model
 ```
 
+If you find ARV useful, consider [giving it a star on GitHub](https://github.com/raven-ai-esh/arv). Thanks for checking it out!
+
 ## Technical quickstart
 
 Targets Windows, macOS and Linux with Python 3.13 and
